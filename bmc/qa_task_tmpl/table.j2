@@ -1,0 +1,16 @@
+<table border="1">
+<tr>
+<th>Filename</th>
+<th>String</th>
+<th>Count (number of instances)</th>
+</tr>
+{% for pathTo, logFile, stats in table %}
+    {% for lvl, count in stats.items() %}
+        <tr>
+            <td><a href="file://{{pathTo}}/{{logFile}}">{{logFile}}</a></td>
+            <td>{{lvl}}</td>
+            <td>{{count}}</td>
+        </tr>
+    {% endfor %}
+{% endfor %}
+</table>
